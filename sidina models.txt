@@ -1,0 +1,30 @@
+models
+- user
+	- name: userName
+	- email: userEmail
+	- pwd: userPwd
+	- songsPur: ["","",""]
+	- collections: [collectionId,collectionId]
+- artist
+	- name: artistName
+	- songs: ["songName1", "songName2"]
+	- albums: ["albumName1"]
+	- email: artistEmail
+	- pwd: artistPwd
+	- sales
+- song
+	- name: userName
+	- artist: artistName
+	- mp3Url: mp3DownloadUrl
+	- sales
+- collections
+	- type: EP/Album
+	- name: collectionName
+	- artist: {
+		type: mongoose.SchemaTypes.ObjectId,
+		ref: 'artist',
+		required: 'true'
+	}
+	- songs: ["songName1"]
+	- colUrl: colDownloadUrl
+	- sales
